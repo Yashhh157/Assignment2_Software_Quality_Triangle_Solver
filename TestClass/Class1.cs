@@ -163,7 +163,105 @@ namespace TestClass
                 Assert.AreEqual(expected, actual);
             }
 
+            // Zero length for one or more sides
 
+            [Test]
+            public void ZeroLengthSide_Input0and4and5_OutputInvalidTriangle()
+            {
+                // Arrange
+                int sideA = 0;
+                int sideB = 4;
+                int sideC = 5;
+                string expected = "INVALID triangle - a zero was entered";
+
+                // Act
+                string actual = Triangle.AnalyzeTriangle(sideA, sideB, sideC);
+
+                // Assert
+                Assert.AreEqual(expected, actual);
+            }
+
+            [Test]
+            public void ZeroLengthSide_Input3and0and6_OutputInvalidTriangle()
+            {
+                // Arrange
+                int sideA = 3;
+                int sideB = 0;
+                int sideC = 6;
+                string expected = "INVALID triangle - a zero was entered";
+
+                // Act
+                string actual = Triangle.AnalyzeTriangle(sideA, sideB, sideC);
+
+                // Assert
+                Assert.AreEqual(expected, actual);
+            }
+
+            [Test]
+            public void ZeroLengthSide_Input7and8and0_OutputInvalidTriangle()
+            {
+                // Arrange
+                int sideA = 7;
+                int sideB = 8;
+                int sideC = 0;
+                string expected = "INVALID triangle - a zero was entered";
+
+                // Act
+                string actual = Triangle.AnalyzeTriangle(sideA, sideB, sideC);
+
+                // Assert
+                Assert.AreEqual(expected, actual);
+            }
+
+            // Invalid response (other than a zero length)
+
+            [Test]
+            public void InvalidResponse_Input2and3and6_OutputInvalidTriangle()
+            {
+                // Arrange
+                int sideA = 2;
+                int sideB = 3;
+                int sideC = 6;
+                string expected = "A triangle is not formed based on the input values";
+
+                // Act
+                string actual = Triangle.AnalyzeTriangle(sideA, sideB, sideC);
+
+                // Assert
+                Assert.AreEqual(expected, actual);
+            }
+
+            [Test]
+            public void InvalidResponse_Input4and9and20_OutputInvalidTriangle()
+            {
+                // Arrange
+                int sideA = 4;
+                int sideB = 9;
+                int sideC = 20;
+                string expected = "A triangle is not formed based on the input values";
+
+                // Act
+                string actual = Triangle.AnalyzeTriangle(sideA, sideB, sideC);
+
+                // Assert
+                Assert.AreEqual(expected, actual);
+            }
+
+            [Test]
+            public void InvalidResponse_Input7and10and25_OutputInvalidTriangle()
+            {
+                // Arrange
+                int sideA = 7;
+                int sideB = 10;
+                int sideC = 25;
+                string expected = "A triangle is not formed based on the input values";
+
+                // Act
+                string actual = Triangle.AnalyzeTriangle(sideA, sideB, sideC);
+
+                // Assert
+                Assert.AreEqual(expected, actual);
+            }
 
 
 
